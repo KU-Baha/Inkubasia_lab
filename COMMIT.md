@@ -1,15 +1,10 @@
 ### Title
-Solve the tasks problem A from lesson 1. Add README files. Write tests.
+Solve the tasks problem B. Write test.
 
 ### Summary
-* Problem a
-  * Solve problem a, write method counter and is_anagram
-  * Write test for method counter and is_anagram
-  * Add README.md file in directory lesson1
-    * Explain how run tests
-* README.md
-  * Add README.md file for the project
-    * Explain configure project
+* Problem B
+  * Solve problem b, write method excel_colum
+  * Write test for method excel_colum
 
 ### Test plan:
 * Run tests. (Instruction in README.md in lesson's directory)

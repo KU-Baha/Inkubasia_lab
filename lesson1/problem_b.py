@@ -16,3 +16,19 @@
 # Column ?: “AAB”
 
 # Write a function that takes a column number and returns a string representing the column name.
+import string
+
+ascii_uppercase = string.ascii_uppercase
+
+
+def excel_colum(colum_number: int) -> string:
+    result = ''
+
+    while colum_number > 0:
+        colum_number, remainder = (colum_number - 1) // 26, (colum_number - 1) % 26
+        result = ascii_uppercase[remainder] + result
+
+    return result
+
+
+print(excel_colum(52))

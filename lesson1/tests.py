@@ -1,4 +1,5 @@
 from .problem_a import counter, is_anagram
+from .problem_b import excel_colum
 
 
 def test_counter():
@@ -16,3 +17,18 @@ def test_is_anagram():
     assert is_anagram('ABC', "BAC")
     assert is_anagram('stop', 'tops')
     assert not is_anagram('dance', 'cancel')
+
+
+def test_excel_colum():
+    assert excel_colum(1) == 'A'
+    assert excel_colum(2) == 'B'
+
+    assert excel_colum(26) == 'Z'
+    assert excel_colum(27) == 'AA'
+    assert excel_colum(28) == 'AB'
+
+    assert excel_colum(52) == 'AZ'
+    assert excel_colum(53) == 'BA'
+    assert excel_colum(54) == 'BB'
+
+    assert excel_colum(260) == 'IZ'
