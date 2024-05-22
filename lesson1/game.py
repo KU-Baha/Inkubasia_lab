@@ -2,7 +2,7 @@ from tic_tac_toe.game import TicTacToe
 
 if __name__ == '__main__':
     board = TicTacToe()
-
+    # some comment
     while True:
         print("Instruction")
         print("The board is 3x3")

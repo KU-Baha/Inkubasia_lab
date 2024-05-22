@@ -1,10 +1,10 @@
 ### Title
 
-TicTacToe Game write tests for game class
+Add some comment in game.py
 
 ### Summary
 
-* TicTacToe Game Test
+* Add commit in 
 
 ### Test plan:
 
