@@ -58,23 +58,23 @@ class TicTacToe:
         # check columns
         for col in range(self.cols):
             if self.board[0][col] == self.board[1][col] == self.board[2][col] != ' ':
-                self.winner = self.current_player.name
+                self.winner = self.current_player
                 return
 
         # check rows
         for row in range(self.rows):
             if self.board[row][0] == self.board[row][1] == self.board[row][2] != ' ':
-                self.winner = self.current_player.name
+                self.winner = self.current_player
                 return
 
         # check diagonals
         if self.board[0][0] == self.board[1][1] == self.board[2][2] != ' ':
-            self.winner = self.current_player.name
+            self.winner = self.current_player
             return
 
         # check anti diagonals
         if self.board[0][2] == self.board[1][1] == self.board[2][0] != ' ':
-            self.winner = self.current_player.name
+            self.winner = self.current_player
             return
 
         # check if board is full

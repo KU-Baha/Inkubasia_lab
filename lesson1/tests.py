@@ -1,5 +1,6 @@
 from .problem_a import counter, is_anagram
 from .problem_b import excel_colum
+from .tic_tac_toe.game import TicTacToe
 
 
 def test_counter():
@@ -32,3 +33,34 @@ def test_excel_colum():
     assert excel_colum(54) == 'BB'
 
     assert excel_colum(260) == 'IZ'
+
+
+def test_game():
+    board = TicTacToe()
+
+    assert board.current_player.value == 'X'
+
+    board.make_move(0, 0) # X
+    assert board.board == [['X', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+    assert board.current_player.value == 'O'
+
+    board.make_move(0, 1) # Y
+    assert board.board == [['X', 'O', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+    assert board.current_player.value == 'X'
+
+    board.make_move(0, 2) # X
+    assert board.board == [['X', 'O', 'X'], [' ', ' ', ' '], [' ', ' ', ' ']]
+
+    # Check winner
+    board.make_move(1, 2) # Y
+    board.make_move(1, 0) # X
+    board.make_move(1, 1) # Y
+    board.make_move(2, 0) # X
+
+    assert board.winner.value == 'X'
+
+    board.finish_the_game()
+
+    assert board.board == [[' ' for _ in range(3)] for _ in range(3)]
+    assert board.current_player.value == 'X'
+    assert board.winner is None
