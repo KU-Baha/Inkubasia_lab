@@ -15,6 +15,17 @@ class PLAYER(Enum):
     SECOND: str = 'O'
 
 
+class WINNER(PLAYER):
+    DRAW: str = 'Draw'
+
+
+def print_board(board: list[list[str]]):
+    for row in board:
+        print('|'.join(row))
+
+    print()
+
+
 class TicTacToe:
     def __init__(self):
         self.rows = 3
@@ -22,12 +33,6 @@ class TicTacToe:
         self.board: list[list[str]] = [[' ' for _ in range(self.cols)] for _ in range(self.rows)]
         self.current_player: PLAYER = PLAYER.FIRST
         self.winner: PLAYER.name | str = None
-
-    def print_board(self):
-        for row in self.board:
-            print('|'.join(row))
-
-        print()
 
     def change_player(self):
         self.current_player = PLAYER.SECOND if self.current_player == PLAYER.FIRST else PLAYER.FIRST
@@ -79,5 +84,5 @@ class TicTacToe:
 
         # check if board is full
         if all([cell != ' ' for row in self.board for cell in row]):
-            self.winner = 'Draw'
+            self.winner = WINNER.DRAW
             return

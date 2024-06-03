@@ -1,4 +1,4 @@
-from tic_tac_toe.game import TicTacToe
+from tic_tac_toe.game import TicTacToe, print_board
 
 if __name__ == '__main__':
     board = TicTacToe()
@@ -9,7 +9,8 @@ if __name__ == '__main__':
         print("Make move by entering row and column number. Column and row number starts from 1")
         print("Player 1: X")
         print("Player 2: O")
-        board.print_board()
+
+        print_board(board.board)
 
         while not board.winner:
             print(f"Player: {board.current_player.name}")
